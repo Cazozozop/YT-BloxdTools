@@ -1,13 +1,18 @@
-// Activer/désactiver le mode sombre
+// Toggle dark mode
 const themeToggle = document.getElementById("theme-toggle");
 themeToggle.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
-    document.querySelectorAll("header, nav").forEach(elem => {
-        elem.classList.toggle("dark-mode");
-    });
+    localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
 });
 
-// Changer d'onglet
+// Load theme on page load
+window.addEventListener('load', () => {
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+    }
+});
+
+// Tab switching function
 function openTab(tabName) {
     document.querySelectorAll('.tab-content').forEach(tab => {
         tab.style.display = 'none';
@@ -15,7 +20,7 @@ function openTab(tabName) {
     document.getElementById(tabName).style.display = 'block';
 }
 
-// Recherche d'images dans l'onglet "Thumbnail"
+// Thumbnail search function
 function searchThumbnails() {
     const searchTerm = document.getElementById("thumbnail-search").value.toLowerCase();
     document.querySelectorAll(".thumbnail-item").forEach(item => {
@@ -24,7 +29,7 @@ function searchThumbnails() {
     });
 }
 
-// Téléchargement d'image
+// Image download function
 function downloadImage(url) {
     const a = document.createElement("a");
     a.href = url;
