@@ -1,0 +1,61 @@
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: #444;
+}
+
+nav button {
+    margin: 0 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.tab-content {
+    padding: 20px;
+}
+
+.thumbnail-item {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+}
+
+.thumbnail-item img {
+    width: 150px;
+    height: 100px;
+    display: block;
+}
+
+button {
+    padding: 5px 10px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.dark-mode {
+    background-color: #222;
+    color: white;
+}
+
+.dark-mode header,
+.dark-mode nav {
+    background-color: #555;
+}
