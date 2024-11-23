@@ -1,10 +1,13 @@
-// Toggle dark mode
+// Activer/désactiver le mode sombre
 const themeToggle = document.getElementById("theme-toggle");
 themeToggle.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
+    document.querySelectorAll("header, nav").forEach(elem => {
+        elem.classList.toggle("dark-mode");
+    });
 });
 
-// Tab switching function
+// Changer d'onglet
 function openTab(tabName) {
     document.querySelectorAll('.tab-content').forEach(tab => {
         tab.style.display = 'none';
@@ -12,7 +15,7 @@ function openTab(tabName) {
     document.getElementById(tabName).style.display = 'block';
 }
 
-// Thumbnail search function
+// Recherche d'images dans l'onglet "Thumbnail"
 function searchThumbnails() {
     const searchTerm = document.getElementById("thumbnail-search").value.toLowerCase();
     document.querySelectorAll(".thumbnail-item").forEach(item => {
@@ -21,7 +24,7 @@ function searchThumbnails() {
     });
 }
 
-// Image download function
+// Téléchargement d'image
 function downloadImage(url) {
     const a = document.createElement("a");
     a.href = url;
