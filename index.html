@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloxd Creator Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Bloxd Creator Hub</h1>
+        <button id="theme-toggle">Toggle Dark Mode</button>
+    </header>
+    <nav>
+        <button onclick="openTab('thumbnail')">Thumbnail</button>
+        <button onclick="openTab('video')">Video</button>
+    </nav>
+
+    <div id="thumbnail" class="tab-content">
+        <h2>Thumbnail Gallery</h2>
+        <input type="text" id="thumbnail-search" placeholder="Search thumbnails..." onkeyup="searchThumbnails()">
+        <div id="thumbnail-gallery">
+            <div class="thumbnail-item" data-title="Sample Thumbnail 1">
+                <img src="path/to/your-image1.jpg" alt="Thumbnail 1">
+                <button onclick="downloadImage('path/to/your-image1.jpg')">Download</button>
+            </div>
+            <div class="thumbnail-item" data-title="Sample Thumbnail 2">
+                <img src="path/to/your-image2.jpg" alt="Thumbnail 2">
+                <button onclick="downloadImage('path/to/your-image2.jpg')">Download</button>
+            </div>
+            <!-- Add more thumbnail items as needed -->
+        </div>
+    </div>
+
+    <div id="video" class="tab-content" style="display: none;">
+        <h2>Video Section</h2>
+        <input type="text" id="video-search" placeholder="Search videos...">
+        <!-- Video content will go here -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
