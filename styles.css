@@ -3,7 +3,7 @@
 
 body {
     font-family: 'Pixelify Sans', sans-serif;
-    background-image: url('background.png');
+    background-image: 'background.png';
     background-size: cover;
     color: #222;
     margin: 0;
